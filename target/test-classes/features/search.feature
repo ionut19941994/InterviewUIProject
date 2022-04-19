@@ -47,8 +47,9 @@ Feature: Actions on a e-commerce website
     Examples:
       | product1  | product2  |
       | Telefon   | Radio     |
-  @Test #This will fail
+
   Scenario Outline: Add to cart 2 products and delete them and try to remove again
+    #This will fail
     Given that the user is on the landing page
     And he is able to search for '<product1>'
     And the user clicks on add to basket button

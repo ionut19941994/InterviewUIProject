@@ -16,6 +16,8 @@ public class Hooks extends Base {
 
     @After("@Test")
     public void afterSeleniumTest() {
-        driver.close();
+        try {driver.close();}
+            catch (NullPointerException npe) {
+        }
     }
 }
