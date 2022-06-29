@@ -14,7 +14,7 @@ public class Base {
     public static WebDriver getDriver() throws IOException
     {
         prop=new Properties();
-        FileInputStream fis=new FileInputStream("/Users/alexandru.badescu/IdeaProjects/Interview Project/src/test/resources/env/env-local.properties");
+        FileInputStream fis=new FileInputStream("/Users/alexandru.badescu/IdeaProjects/Learning Project/src/test/resources/env/env-local.properties");
         prop.load(fis);
 
         System.setProperty("webdriver.chrome.driver", "/Users/alexandru.badescu/Downloads/Automation/Drivers/chromedriver");
