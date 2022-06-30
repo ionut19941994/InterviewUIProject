@@ -1,6 +1,7 @@
 package cucumber.PageObjects.Homepage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -10,6 +11,7 @@ public class CartPage {
     By delete = By.xpath("//a[@class='emg-right remove-product btn-remove-product gtm_rp080219']");
     By cartTitle = By.xpath("//h1[@class='cart']");
     By pageTitle = By.xpath("//div[@class='title']");
+    By backToHomeBtn = By.xpath(("//a[contains(@class,'empty-cart-primary-btn')]"));
 
     public CartPage(WebDriver driver) {
         this.driver = driver;
@@ -35,6 +37,10 @@ public class CartPage {
         return driver.findElement(cartTitle);
     }
 
+    public WebElement backToHomeBtn() {
+        return driver.findElement(backToHomeBtn);
+    }
+
     public WebElement pageTitle() {
         return driver.findElement(pageTitle);
     }
@@ -46,5 +52,19 @@ public class CartPage {
     public void deleteFromCart() throws Throwable{
         cartDeleteBtn().click();
         Thread.sleep(3000);
+    }
+
+    public boolean isDeletePresent() throws Throwable {
+        try {
+                cartDeleteBtn();
+                return true;
+            }
+        catch(NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    public boolean isBackToHomeButtonDisplayed() {
+        return backToHomeBtn().isDisplayed();
     }
 }

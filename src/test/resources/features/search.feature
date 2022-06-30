@@ -47,7 +47,7 @@ Feature: Actions on a e-commerce website
     Examples:
       | product1  | product2  |
       | Telefon   | Radio     |
-
+  @Test
   Scenario Outline: Add to cart 2 products and delete them and try to remove again
     #This will fail
     Given that the user is on the landing page
@@ -62,7 +62,7 @@ Feature: Actions on a e-commerce website
     And he sees that the item '<product2>' is not present anymore in the cart
     Then he is able to delete an item from the cart
     And he sees that no items are present anymore
-    And he is able to delete an item from the cart
+    And he is not able to delete any more item from the cart
 
     Examples:
       | product1  | product2  |
