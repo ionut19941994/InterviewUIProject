@@ -40,7 +40,7 @@ Feature: Actions on a e-commerce website
     And the user will see that the basket was updated with '<product1>'
     And the user will see that the basket was updated with '<product2>'
     And he is able to delete an item from the cart
-    And he sees that the item '<product1>' is not present anymore in the cart
+    And he sees that the item '<product2>' is not present anymore in the cart
     Then he is able to delete an item from the cart
     And he sees that no items are present anymore
 
@@ -59,7 +59,7 @@ Feature: Actions on a e-commerce website
     And the user will see that the basket was updated with '<product1>'
     And the user will see that the basket was updated with '<product2>'
     And he is able to delete an item from the cart
-    And he sees that the item '<product1>' is not present anymore in the cart
+    And he sees that the item '<product2>' is not present anymore in the cart
     Then he is able to delete an item from the cart
     And he sees that no items are present anymore
     And he is able to delete an item from the cart
