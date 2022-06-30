@@ -67,4 +67,11 @@ public class HomepageSteps{
         c=new CartPage(driver);
         assertThat(c.pageTitle().getText(),is("Cosul tau este gol"));
     }
+
+    @And("he is not able to delete any more item from the cart")
+    public void user_asserts_that_user_can_no_longer_delete_items() throws Throwable{
+        c=new CartPage(driver);
+        assertThat(c.isDeletePresent(), is(false));
+        assertThat(c.isBackToHomeButtonDisplayed(), is(true));
+    }
 }
