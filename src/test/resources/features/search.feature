@@ -10,9 +10,9 @@ Feature: Actions on a e-commerce website
     And the user will see that the basket was updated with '<product1>'
     And the user will see that the basket was updated with '<product2>'
 
-  Examples:
-    | product1  | product2  |
-    | Telefon   | Radio     |
+    Examples:
+      | product1 | product2 |
+      | Telefon  | Radio    |
 
   Scenario Outline: Add to cart 2 products and delete 1 and assert
     Given that the user is on the landing page
@@ -27,8 +27,8 @@ Feature: Actions on a e-commerce website
     And he sees that the item '<product1>' is not present anymore in the cart
 
     Examples:
-      | product1  | product2  |
-      | Telefon   | Radio     |
+      | product1 | product2 |
+      | Telefon  | Radio    |
 
   Scenario Outline: Add to cart 2 products and delete them and assert
     Given that the user is on the landing page
@@ -45,11 +45,10 @@ Feature: Actions on a e-commerce website
     And he sees that no items are present anymore
 
     Examples:
-      | product1  | product2  |
-      | Telefon   | Radio     |
+      | product1 | product2 |
+      | Telefon  | Radio    |
 
   Scenario Outline: Add to cart 2 products and delete them and try to remove again
-    #This will fail
     Given that the user is on the landing page
     And he is able to search for '<product1>'
     And the user clicks on add to basket button
@@ -65,6 +64,6 @@ Feature: Actions on a e-commerce website
     And he is not able to delete any more item from the cart
 
     Examples:
-      | product1  | product2  |
-      | Telefon   | Radio     |
+      | product1 | product2 |
+      | Telefon  | Radio    |
 
