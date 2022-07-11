@@ -4,6 +4,7 @@ import cucumber.models.Product;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.http.Method;
 import io.restassured.response.ValidatableResponse;
 
 import static io.restassured.RestAssured.given;
@@ -138,5 +139,21 @@ public class ApiTests {
                 as(Product.class);
 
         assertThat(actualProduct, samePropertyValuesAs(expectedProduct));
+    }
+
+    @Given("^the user sends the (.*) request to the EP?$")
+    public void productByRequest(String reqType) {
+        String endpoint = "http://localhost:8888/api_testing/product/read_one.php";
+                given().
+                        queryParam("id", 2).
+                        when().
+                        request(reqType, endpoint).
+                        then();
+    }
+//    Needs rework
+    @When("^the user receives (.*) status code?$")
+    public void verifyStatus(int statusCode){
+        String endpoint = "http://localhost:8888/api_testing/product/read_one.php";
+        given().when().request(Method.GET, endpoint).then().assertThat().statusCode(statusCode);
     }
 }
