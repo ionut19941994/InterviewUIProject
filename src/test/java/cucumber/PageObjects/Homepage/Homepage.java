@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 
 public class Homepage extends Base{
 
-    public static WebDriver driver;
     By search=By.xpath("//input[@type='search']");
     By homeLink=By.className("navbar-brand");
     By button=By.xpath("//button[@class='btn btn-default searchbox-submit-button']");
@@ -16,31 +15,31 @@ public class Homepage extends Base{
     By myCart=By.xpath("//a[@id='my_cart']");
 
     public Homepage(WebDriver driver){
-        Homepage.driver =driver;
+        Base.driver =driver;
     }
 
     public WebElement searchBox(){
-        return Base.driver.findElement(search);
+        return driver.findElement(search);
         }
 
     public WebElement homepageLink(){
-        return Base.driver.findElement(homeLink);
+        return driver.findElement(homeLink);
     }
 
     public WebElement searchBtn(){
-        return Base.driver.findElement(button);
+        return driver.findElement(button);
         }
 
     public WebElement addToCartBtn(){
-        return Base.driver.findElement(addToCartButton);
+        return driver.findElement(addToCartButton);
     }
 
     public WebElement closeProdBrn(){
-        return Base.driver.findElement(closeProductSummary);
+        return driver.findElement(closeProductSummary);
     }
 
     public WebElement myCartBtn(){
-        return Base.driver.findElement(myCart);
+        return driver.findElement(myCart);
     }
 
     public void searchForAProduct(String product) {
