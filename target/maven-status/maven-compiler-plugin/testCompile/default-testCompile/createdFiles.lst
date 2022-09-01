@@ -1,4 +1,0 @@
-cucumber/runner/TestRunner.class
-cucumber/Cucumber/Base.class
-cucumber/StepDefinition/HomepageSteps.class
-cucumber/PageObjects/Homepage/Homepage.class
