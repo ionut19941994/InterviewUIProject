@@ -2,3 +2,6 @@
 /target/generated-test-sources
 /target/test-classes
 /.idea/
+/target/cucumber.xml
+/target/maven-status
+/target/tests
