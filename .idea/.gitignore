@@ -1,0 +1,7 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+/target/generated-sources
+/target/generated-test-sources
+/test-classes
+/target/tests
